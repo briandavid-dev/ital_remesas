@@ -1,0 +1,83 @@
+<ion-header>
+        <ion-navbar color="grisfondo">
+            
+            <ion-title >
+                <img height="20" src="assets/imgs/logo_escrito.svg"/>
+            </ion-title>
+        </ion-navbar>
+    </ion-header>
+    <ion-content padding class="fondoTotal">
+       
+            
+            <ion-grid>
+                <h3 text-center class="letraColorTextos">Verificar estatus de remesa</h3>
+                <p text-center class="letraColorTextos">Por favor ingrese el número de guía<br> y haga click en el boton 'Buscar'</p>
+                
+                <ion-row>
+                    <ion-col col-12>
+                        <ion-item class="roundedInput">
+                            <ion-input type="text" value="" [(ngModel)]="numeroGuia"></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col col-12>
+                        <button ion-button round full 
+                        color="colorPrimaryButtom" 
+                        class="letraMinusculaNormal" 
+                        (click)="goToBuscarGuia()">Buscar</button>
+                    </ion-col>
+                    <ion-col col-12>
+                        <p *ngIf="numeroGuia != null" class="letraColorTextos">
+                            Guía: {{numeroGuia}}
+                        </p>
+
+                        <div *ngIf="contenidoGuia">
+                            
+                                <ion-row class="row header tableHeader" >
+                                        <ion-col col-5>Tipo de gestión</ion-col>
+                                        <ion-col col-3 text-center >Fecha</ion-col>
+                                        <ion-col col-4 text-right >Oficina</ion-col>
+                                    </ion-row>
+                                    <div class="tableRows">
+                                        <ion-row class="tableHeaderOddImpar">
+                                            <ion-col col-5 text-left>
+                                                Entregado a destinatario                           
+                                            </ion-col>
+                                            <ion-col col-3 text-center>                         
+                                                09-01-19                        
+                                            </ion-col>
+                                            <ion-col col-4 text-right>
+                                                Panamá
+                                            </ion-col>
+                                        </ion-row>
+                                        <ion-row class="tableHeaderEvenPar" >
+                                                <ion-col col-5 text-left>
+                                                    Enviado con abuela
+                                                </ion-col>
+                                                <ion-col col-3 text-center>                         
+                                                    10-02-19                        
+                                                </ion-col>
+                                                <ion-col col-4 text-right>
+                                                    Colombia
+                                                </ion-col>
+                                        </ion-row>
+                                    </div>
+                            
+                        </div>
+
+                    </ion-col>
+                </ion-row>
+                
+                
+    
+                
+                
+                
+            </ion-grid>
+            
+            
+    
+            
+    
+    </ion-content>
+    
+    
